@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>My Rocket</title>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="components.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <a-camera wasd-controls-enabled="false" position="0 1.6 5" camera></a-camera>
+
+            <a-entity position="0 0 0" rotation="0 0 0" rocket>
+                <a-cone id="part1" color="green" position="0 0.5 0" radius-bottom="0.5" radius-top="0.05"></a-cone>
+                <a-cylinder id="part2" color="orange" radius="0.5" height="4" position="0 -2 0"></a-cylinder>
+                <a-cylinder id="part3" position="0 -3.5 0" color="blue" radius="0.5" height="1.5" fallDown>
+                    <a-triangle position="-0.93 -1.35 -0.94" scale="0.5 0.5 1" color="blue" vertex-a="1 1 1" vertex-b="1 3 1" vertex-c = "-1 1 1"></a-triangle>
+                    <a-triangle position="-0.11 -1 -0.94" scale="0.5 0.5 1" color="blue" vertex-a="1 1 1" vertex-b="1 3 1" vertex-c="-1 1 1" rotation="0 0 270"></a-triangle>
+                </a-cylinder>
+            </a-entity>
+            <a-entity animation="property:rotation; to:0 360 0; easing:linear; loop:true; dur:100000" position="0 0 0" rotation="0 0 0">
+                <a-sphere src="https://cdn.glitch.me/850dd813-e5e9-4dd0-9751-38981ae74172%2Fearth.jpg" position="-3 -8 10" radius="11"></a-sphere>
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
